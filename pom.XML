@@ -1,0 +1,12 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <packaging>pom</packaging>
+    <groupId>com.grunka.random.fortuna</groupId>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>Fuckyou</artifactId>
+    <version>2.2-SNAPSHOT</version>
+    <modules>
+        <module>jcstest</module>
+        <module>fortuna</module>
+    </modules>
+</project>
