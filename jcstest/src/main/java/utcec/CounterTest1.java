@@ -1,37 +1,39 @@
 package utcec;
 
-import com.grunka.random.fortuna.Fortuna;
+import com.grunka.random.fortuna.Counter;
 import org.openjdk.jcstress.annotations.*;
 import org.openjdk.jcstress.infra.results.ZZ_Result;
-
 
 //@JCStressTest
 // Outline the outcomes here. The default outcome is provided, you need to remove it:
 @Outcome(id = "true, true", expect = Expect.ACCEPTABLE, desc = "Default outcome.")
 @State
-public class FortunaTest {
+public class CounterTest1 {
     private Boolean ifEqualActor1, ifEqualActor2;
-
-    public FortunaTest () {
+    public CounterTest1 () {
         ifEqualActor1 = true;
 		ifEqualActor2 = true;
     }
     @Actor
     public void actor1() {
-        Fortuna fortuna = Fortuna.createInstance();
         try {
-            fortuna.nextInt(42);
-        } catch (IllegalStateException ignored) {
-            ifEqualActor1 = false;
+            new Counter(127);
+        }
+        catch (IllegalArgumentException i) {
+            return;
+        } catch (Exception e) {
+            ifEqualActor1 = true;
         }
     }
     @Actor
     public void actor2() {
-        Fortuna fortuna = Fortuna.createInstance();
         try {
-            fortuna.nextInt(42);
-        } catch (IllegalStateException ignored) {
-            ifEqualActor2 = false;
+            new Counter(127);
+        }
+        catch (IllegalArgumentException i) {
+            return;
+        } catch (Exception e) {
+            ifEqualActor2 = true;
         }
     }
     @Arbiter

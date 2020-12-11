@@ -77,30 +77,30 @@
 <tr>
 <td nowrap><b>TC 1</b></td>
 <td nowrap>JVM options: [-XX:-TieredCompilation]
-Iterations: 5
-Time: 1000
-Stride: [10, 8192] (capped by TIME)</td>
+Iterations: 1
+Time: 10
+Stride: [10, 64] (capped by TIME)</td>
 </tr>
 <tr>
 <td nowrap><b>TC 2</b></td>
 <td nowrap>JVM options: [-XX:-TieredCompilation]
-Iterations: 5
-Time: 1000
-Stride: [10, 10000] (capped by NONE)</td>
+Iterations: 1
+Time: 10
+Stride: [10, 256] (capped by TIME)</td>
 </tr>
 <tr>
 <td nowrap><b>TC 3</b></td>
 <td nowrap>JVM options: [-XX:TieredStopAtLevel=1]
-Iterations: 5
-Time: 1000
-Stride: [10, 8192] (capped by TIME)</td>
+Iterations: 1
+Time: 10
+Stride: [10, 128] (capped by TIME)</td>
 </tr>
 <tr>
 <td nowrap><b>TC 4</b></td>
 <td nowrap>JVM options: [-Xint]
-Iterations: 5
-Time: 1000
-Stride: [10, 8192] (capped by TIME)</td>
+Iterations: 1
+Time: 10
+Stride: [10, 128] (capped by TIME)</td>
 </tr>
 </table>
 <h3>Observed states</h3>
@@ -115,36 +115,29 @@ Stride: [10, 8192] (capped by TIME)</td>
 <th>Interpretation</th>
 </tr>
 <tr>
-<td align='center'>false, false</td>
-<td align='right' width='7.5%' bgColor=#ff0000>2</td>
-<td align='right' width='7.5%' bgColor=#ff0000>1</td>
-<td>FORBIDDEN</td>
-<td>No default case provided, assume FORBIDDEN</td>
-</tr>
-<tr>
 <td align='center'>false, true</td>
-<td align='right' width='7.5%' bgColor=#ff0000>62810</td>
-<td align='right' width='7.5%' bgColor=#ff0000>90132</td>
-<td align='right' width='7.5%' bgColor=#ff0000>53812</td>
-<td align='right' width='7.5%' bgColor=#ff0000>54327</td>
+<td align='right' width='7.5%' bgColor=#ff0000>38</td>
+<td align='right' width='7.5%' bgColor=#ff0000>159</td>
+<td align='right' width='7.5%' bgColor=#ff0000>128</td>
+<td align='right' width='7.5%' bgColor=#ff0000>144</td>
 <td>FORBIDDEN</td>
 <td>No default case provided, assume FORBIDDEN</td>
 </tr>
 <tr>
 <td align='center'>true, false</td>
-<td align='right' width='7.5%' bgColor=#ff0000>258782</td>
-<td align='right' width='7.5%' bgColor=#ff0000>458719</td>
-<td align='right' width='7.5%' bgColor=#ff0000>268393</td>
-<td align='right' width='7.5%' bgColor=#ff0000>252723</td>
+<td align='right' width='7.5%' bgColor=#ff0000>2763</td>
+<td align='right' width='7.5%' bgColor=#ff0000>5763</td>
+<td align='right' width='7.5%' bgColor=#ff0000>2849</td>
+<td align='right' width='7.5%' bgColor=#ff0000>2923</td>
 <td>FORBIDDEN</td>
 <td>No default case provided, assume FORBIDDEN</td>
 </tr>
 <tr>
 <td align='center'>true, true</td>
+<td align='right' width='7.5%' bgColor=#c0c0c0>0</td>
 <td align='right' width='7.5%' bgColor=#00ff00>1</td>
 <td align='right' width='7.5%' bgColor=#c0c0c0>0</td>
 <td align='right' width='7.5%' bgColor=#c0c0c0>0</td>
-<td align='right' width='7.5%' bgColor=#00ff00>4</td>
 <td>ACCEPTABLE</td>
 <td>Default outcome.</td>
 </tr>

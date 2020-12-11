@@ -11,7 +11,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 
-//@JCStressTest
+@JCStressTest
 // Outline the outcomes here. The default outcome is provided, you need to remove it:
 @Outcome(id = "true, true", expect = Expect.ACCEPTABLE, desc = "Default outcome.")
 @State
